@@ -373,6 +373,10 @@ section {
         font-weight: 600;
     }
 
+    .playlist form {
+        display: flex;
+    }
+
     /* All stories */
 
     .pagination {
@@ -627,6 +631,10 @@ section {
     }
 }
 
+.playlist-details {
+    background: linear-gradient(1.76deg, #100E52 1.49%, #6577D3 98.51%);
+}
+
 
 
 /* Hovers & active states */
@@ -645,4 +653,29 @@ section {
 .language-content button:focus {
     background: var(--detail-1);
     color: white;
+}
+
+/* Media queries */
+
+@media (min-width: 46rem) {
+    section {
+        max-width: 45rem;
+        margin: 0 auto;
+    }
+
+    .lessons {
+
+        .stories {
+            margin-bottom: 2rem;
+        }
+
+        .story {
+            max-width: 45rem;
+        }
+
+        .liked-playlists,
+        .suggested-playlists {
+            margin-right: auto;
+        }
+    }
 }

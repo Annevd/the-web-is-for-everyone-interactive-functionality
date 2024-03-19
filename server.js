@@ -83,6 +83,24 @@ app.get('/lessons/stories', function(request, response) {
   })
 })
 
+// Maak een GET route voor de playlist pagina
+
+app.get('/lessons/playlist/:slug', function (request, response) {
+  Promise.all([
+    fetchJson(apiUrl + '/tm_story'),
+    fetchJson(apiUrl + '/tm_language'),
+    fetchJson(apiUrl + '/tm_playlist' + request.params.slug),
+    fetchJson(apiUrl + '/tm_audio')
+  ]).then(([storyData, languageData, playlistData, audioData]) => {
+    
+    response.render('playlist', {
+      stories: storyData.data,
+      languages: languageData.data,
+      playlists: playlistData.data,
+      audio: audioData.data})
+  })
+})
+
 // Maak een GET route voor de statistics pagina
 
 app.get('/statistics', function (request, response) {
@@ -93,6 +111,12 @@ app.get('/statistics', function (request, response) {
 
 app.get('/profile', function (request, response) {
   response.render('profile')
+})
+
+// Maak een POST route voor de lessons pagina
+
+app.post('/lessons', function (request, response) {
+
 })
 
 // 3. Start de webserver
