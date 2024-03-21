@@ -91,10 +91,10 @@ app.get('/lessons/playlist/:slug', function (request, response) {
   Promise.all([
     fetchJson(apiUrl + '/tm_story'),
     fetchJson(apiUrl + '/tm_language'),
-    fetchJson(apiUrl + '/tm_playlist' + request.params.slug),
+    fetchJson(apiUrl + '/tm_playlist/?filter={"slug":"' + request.params.slug + '"}'),
     fetchJson(apiUrl + '/tm_audio')
   ]).then(([storyData, languageData, playlistData, audioData]) => {
-    
+    console.log(playlistData)
     response.render('playlist', {
       stories: storyData.data,
       languages: languageData.data,
