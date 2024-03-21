@@ -56,7 +56,7 @@ app.get('/lessons', function (request, response) {
     fetchJson(apiUrl + '/tm_audio') // Fetch data from the tm_audio endpoint
   ]).then(([storyData, languageData, playlistData, audioData]) => {
 // After all promises are resolved, this function will be executed with the fetched data
-console.log(favorites)
+
 // Render the 'index.ejs' template and pass all fetched data to the view   
  response.render('lessons', {
       favorites: favorites,
@@ -120,7 +120,7 @@ app.get('/profile', function (request, response) {
 app.post('/:playlistId/like-or-unlike', function(request, response) {
   const playlistId = Number(request.params.playlistId);
   const action = request.body.action; // Retrieve the value of the 'actie' parameter from the form
-console.log(action, playlistId)
+
   // Implement the logic to handle liking or unliking the playlist
   if (action === 'like') {
     // Handle 'like' action
