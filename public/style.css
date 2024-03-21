@@ -456,6 +456,14 @@ section {
         display: none;
     }
 
+    .liked-playlists .empty-state {
+        display: inline-block;
+        padding: 0.25rem var(--spacing);
+        border-radius: var(--radius-3);
+        color: white;
+        background: #494375;
+    }
+
     .liked-playlists .playlist,
     .suggested-playlists .playlist {
         width: 10rem;
@@ -634,7 +642,7 @@ section {
 .playlist-details {
     background: linear-gradient(1.76deg, #100E52 1.49%, #6577D3 98.51%);
     height: 100vh;
-    
+
     .playlist-head {
         position: relative;
 
