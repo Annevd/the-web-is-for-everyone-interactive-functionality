@@ -27,6 +27,7 @@ app.use(express.static('public'))
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({ extended: true }));
 
+let favorites = {}
 
 /*** Routes & data ***/
 
@@ -55,9 +56,10 @@ app.get('/lessons', function (request, response) {
     fetchJson(apiUrl + '/tm_audio') // Fetch data from the tm_audio endpoint
   ]).then(([storyData, languageData, playlistData, audioData]) => {
 // After all promises are resolved, this function will be executed with the fetched data
-
+console.log(favorites)
 // Render the 'index.ejs' template and pass all fetched data to the view   
  response.render('lessons', {
+      favorites: favorites,
       stories: storyData.data, // Pass fetched story data to the view under the 'stories' key
       languages: languageData.data, // Pass fetched language data to the view under the 'languages' key
       playlists: playlistData.data, // Pass fetched playlist data to the view under the 'playlists' key
@@ -115,9 +117,21 @@ app.get('/profile', function (request, response) {
 
 // Maak een POST route voor de lessons pagina
 
-app.post('/lessons', function (request, response) {
+app.post('/:playlistId/like-or-unlike', function(request, response) {
+  const playlistId = Number(request.params.playlistId);
+  const action = request.body.action; // Retrieve the value of the 'actie' parameter from the form
+console.log(action, playlistId)
+  // Implement the logic to handle liking or unliking the playlist
+  if (action === 'like') {
+    // Handle 'like' action
+    favorites[playlistId] = true
 
-})
+  } else if (action === 'unlike') {
+    favorites[playlistId] = false
+
+  } 
+  response.redirect(303, '/lessons')
+  })
 
 // 3. Start de webserver
 
