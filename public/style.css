@@ -500,7 +500,61 @@ section {
         white-space: nowrap;
         width: 1px;
     }
+
+    .succes-state {
+        display: none;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #139943;
+        width: max-content;
+        padding: var(--spacing);
+        border-radius: var(--radius-2);
+        opacity: 98%;
+        color: white;
+        font-weight: bold;
+    }
+
+    .succes-show,
+    .delete-show {
+        display: flex;
+    }
+
+    .heart-animation {
+        height: 2rem;
+        width: 2rem;
+        background-image:url('/assets/heart-stopmotion.svg');
+        background-size: 1100%;
+        background-position: left;
+        background-repeat:no-repeat;
+        animation: heart-burst 1.25s steps(10) 3;
+    }
+
+    .deleted-state {
+        display: none;
+        position: fixed;
+        bottom: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        justify-content: center;
+        width: max-content;
+        background: #c52b33;
+        padding: var(--spacing);
+        border-radius: var(--radius-2);
+        opacity: 98%;
+        color: white;
+        font-weight: bold;
+    }
 }
+
+@keyframes heart-burst {
+    from {background-position: left;}
+    to { background-position: right;}
+   }
 
 /*█████  ██      ██          ███████ ████████  ██████  ██████  ██ ███████ ███████ 
  ██   ██ ██      ██          ██         ██    ██    ██ ██   ██ ██ ██      ██      

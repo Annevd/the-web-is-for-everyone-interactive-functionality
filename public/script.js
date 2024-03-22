@@ -20,4 +20,24 @@ closeMenuButton.addEventListener('click', function() {
     document.querySelector(".menu-button.menu").style.display = "none";
 })
 
+const likeButton = document.querySelector(".like-button")
+const succesState = document.querySelector(".succes-state")
+const unlikeButton = document.querySelector(".unlike-button")
+const deletedState = document.querySelector(".deleted-state")
+
+likeButton.addEventListener('click', function() {
+    succesState.classList.add("succes-show")
+    setTimeout(function() {
+        succesState.style.display = 'none';
+    }, 3750);
 })
+
+unlikeButton.addEventListener('click', function() {
+    deletedState.classList.add("delete-show")
+    setTimeout(function() {
+        deletedState.style.display = 'none';
+    }, 3750);
+})
+
+})
+
