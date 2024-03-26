@@ -74,6 +74,7 @@
                 <a href="/lessons/stories">Show all</a>
         </div>
 
+        <div class="stories-overlay">
         <% if (stories && stories.length > 0) { %>
         <ul class="stories-content">
             <% stories.forEach(story => { %>
@@ -84,7 +85,7 @@
                     <h3><%- story.title %></h3>
                     <img src="assets/united-kingdom-flag.svg" alt="language flag">
                 </div>
-                <p><%= story.summary.substring(0, 85) %>...</p>
+                <p><%= story.summary.substring(0, 60) %>...</p>
                     <div class="story-footer">
                         <div class="audio-container">
                             <a href="/story:id" aria-label="play">
@@ -119,6 +120,7 @@
         <% } else { %>
             <p>No stories available.</p>
         <% } %>
+        </div>
 
         <!-- Paginatie -->
 
