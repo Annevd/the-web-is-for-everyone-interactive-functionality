@@ -217,10 +217,11 @@ section {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-height: 380px;
+    max-height: 420px;
     overflow: scroll;
     overflow-y: hidden;
     gap: var(--spacing);
+    scroll-snap-type: x mandatory;
 }
 
 .stories ul::-webkit-scrollbar {
@@ -234,6 +235,7 @@ section {
     padding: var(--spacing);
     background: white;
     border-radius: var(--radius-3);
+    scroll-snap-align: center;
 }
 
 .story img:first-child {
@@ -282,13 +284,26 @@ section {
     }
 }
 
+.story .audio-container svg {
+    height: 2rem;
+    width: 2rem;
+}
+
 .download-add {
     display: flex;
     gap: var(--spacing);
 
     svg {
         display: block;
+        height: 30px;
+        width: 30px;
     }
+
+    button:nth-of-type(2) svg {
+        height: 25px;
+        width: 25px;
+    }
+
 }
 
 /*██      ███████ ███████ ███████  ██████  ███    ██ ███████ 
@@ -380,6 +395,11 @@ section {
     .playlist .audio-container {
         margin-top: auto;
         font-weight: bold;
+
+        svg {
+            height: 45px;
+            width: 45px;
+        }
     }
         
     .playlist img {
@@ -506,6 +526,12 @@ section {
     .suggested-playlists .playlist {
         width: 10rem;
         flex-shrink: 0;
+        scroll-snap-align: center;
+
+        button svg {
+            height: 45px;
+            width: 45px;
+        }
     }
 
     .liked-playlists .playlist:last-of-type,
@@ -521,6 +547,7 @@ section {
 
         svg {
             display: block;
+            transition: var(--transition-1);
         }
     }
 
@@ -540,7 +567,7 @@ section {
     }
 
     .succes-state {
-        display: none;
+        display: flex;
         position: fixed;
         left: 50%;
         transform: translateX(-50%);
@@ -555,25 +582,13 @@ section {
         opacity: 98%;
         color: white;
         font-weight: bold;
-    }
-
-    .succes-show,
-    .delete-show {
-        display: flex;
-    }
-
-    .heart-animation {
-        height: 2rem;
-        width: 2rem;
-        background-image:url('/assets/heart-stopmotion.svg');
-        background-size: 1100%;
-        background-position: left;
-        background-repeat:no-repeat;
-        animation: heart-burst 1.25s steps(10) 3;
+        animation: fadeOut 1s ease-in-out;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
     }
 
     .deleted-state {
-        display: none;
+        display: flex;
         position: fixed;
         bottom: 1rem;
         left: 50%;
@@ -586,6 +601,19 @@ section {
         opacity: 98%;
         color: white;
         font-weight: bold;
+        animation: fadeOut 1s ease-in-out;
+        animation-delay: 3s;
+        animation-fill-mode: forwards;
+    }
+
+    .heart-animation {
+        height: 2rem;
+        width: 2rem;
+        background-image:url('/assets/heart-stopmotion.svg');
+        background-size: 1100%;
+        background-position: left;
+        background-repeat:no-repeat;
+        animation: heart-burst 1.25s steps(10) 3;
     }
 }
 
@@ -593,6 +621,15 @@ section {
     from {background-position: left;}
     to { background-position: right;}
    }
+
+@keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
 
 /*█████  ██      ██          ███████ ████████  ██████  ██████  ██ ███████ ███████ 
  ██   ██ ██      ██          ██         ██    ██    ██ ██   ██ ██ ██      ██      
@@ -726,6 +763,11 @@ section {
     .stories {
         margin-bottom: 0;
     }
+
+    .stories ul {
+        max-height: none;
+        padding-bottom: var(--spacing);
+    }
 }
 
 
@@ -817,6 +859,11 @@ section {
             height: 45px;
             width: 45px;
         }
+
+        .shuffle svg {
+            height: 30px;
+            width: 30px;
+        }
     }
 
     .stories-content {
@@ -842,6 +889,15 @@ section {
 .language-content button:focus {
     background: var(--detail-1);
     color: white;
+}
+
+.suggested-playlists .like-button svg:hover,
+.suggested-playlists .like-button svg:hover path,
+.liked-playlists .unlike-button svg:hover,
+.liked-playlists .unlike-button svg:hover path {
+    fill: red;
+    stroke: red;
+    opacity: 50%;
 }
 
 /* Media queries */

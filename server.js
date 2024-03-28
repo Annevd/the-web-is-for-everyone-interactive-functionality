@@ -63,7 +63,8 @@ app.get('/lessons', function (request, response) {
       stories: storyData.data, // Pass fetched story data to the view under the 'stories' key
       languages: languageData.data, // Pass fetched language data to the view under the 'languages' key
       playlists: playlistData.data, // Pass fetched playlist data to the view under the 'playlists' key
-      audio: audioData.data}) // Pass fetched audio data to the view under the 'audio' key
+      audio: audioData.data, // Pass fetched audio data to the view under the 'audio' key
+      justUpdated: request.query.justUpdated})
     });
 })
 
@@ -120,17 +121,20 @@ app.get('/profile', function (request, response) {
 app.post('/:playlistId/like-or-unlike', function(request, response) {
   const playlistId = Number(request.params.playlistId);
   const action = request.body.action; // Retrieve the value of the 'actie' parameter from the form
+  let whatHappened = ''
 
   // Implement the logic to handle liking or unliking the playlist
   if (action === 'like') {
     // Handle 'like' action
     favorites[playlistId] = true
+    whatHappened = 'liked'
 
   } else if (action === 'unlike') {
     favorites[playlistId] = false
+    whatHappened = 'unliked'
 
   } 
-  response.redirect(303, '/lessons')
+  response.redirect(303, '/lessons?justUpdated=' + playlistId + '&whatHappened=' + whatHappened)
   })
 
 // 3. Start de webserver
