@@ -58,6 +58,8 @@ Sowieso ben ik bij alles eerst begonnen met het schrijven van de HTML, zoals bij
 
 Ook heb ik het menu dat ik vorige sprint al heb gemaakt enhanced. Ik heb als enhancement toegevoegd dat je niet buiten het menu kan tabben als je in het menu bent, en dat je niet in het menu kan tabben als je er niét in zit.
 
+Ook gebruik ik `scrollbar-width: none` in een `@supports` om de scrollbars weg te halen bij alleen browsers die dat ondersteunen.
+
 Voor de POST functionaliteit van deze sprint ben ik begonnen met het schrijven van de HTML. Vervolgens heb ik ervoor gezorg dat de interactie goed werkte via de server.js. Daarna ben ik pas begonnen met het toevoegen van CSS en overige enhancements.
 
 Tot slot heb ik dit toegepast op de achtergrond kleuren in de gradients. Eerst staat in de CSS de normale gradient toegepast op de achtergronden. Als enhancement maakt ik gebruik van een `@supports` query om gebruik te maken van een ander color model, namelijk `oklch`. Hierdoor worden de kleuren in de gradients mooier en feller weergegeven. Omdat ik gebruik maak van de `@supports` query wordt dit alleen toegepast op browsers en devices waar dit ondersteund word, en wordt de reguliere gradient gebruikt waar het niet ondersteund wordt.
