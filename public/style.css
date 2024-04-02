@@ -41,9 +41,8 @@
     --method-5: #FFA02E;
 
     /* Details */
-    --detail-1: #9264F4;
-    --detail-2: #139943;
-    --detail-2: color(display-p3 0.074510 0.600000 0.262745 / 1.000000);
+    --detail-1: #6833db;
+    --detail-2: #006604;
     --skeleton: #494375;
 
     /* Menu layover */
@@ -218,15 +217,11 @@ section {
     flex-direction: column;
     flex-wrap: wrap;
     max-height: 420px;
-    overflow: scroll;
+    overflow: auto;
     overflow-y: hidden;
     gap: var(--spacing);
     scroll-snap-type: x mandatory;
 }
-
-.stories ul::-webkit-scrollbar {
-    display: none;
-  }
 
 .story {
     display: flex;
@@ -331,7 +326,7 @@ section {
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
-        overflow: scroll;
+        overflow: auto;
         counter-reset: list-counter;
         gap: 1.5rem;
     }
@@ -446,6 +441,7 @@ section {
             background: var(--detail-1);
             border-radius: var(--radius-2);
             transition: var(--transition-1);
+            border: 2px solid #8571ff;
 
             svg {
                 display: block;
@@ -501,7 +497,7 @@ section {
     .liked-playlists ul,
     .suggested-playlists ul {
         display: flex;
-        overflow-x: scroll;
+        overflow-x: auto;
         scroll-snap-type: x mandatory;
         gap: 1rem;
     }
@@ -757,7 +753,7 @@ section {
         font-size: 14px;
         color: white;
         border-radius: var(--radius-3);
-        border: none;
+        border: 2px solid #8571ff;
     }
 
     .stories {
@@ -963,5 +959,13 @@ section {
             0deg in oklch, 
         rgba(20,33,81,1) 0%, 
         rgba(71,24,113,1) 100%);
+    }
+}
+
+@supports(scrollbar-width: none) {
+    .stories ul,
+    .liked-playlists ul,
+    .suggested-playlists ul {
+        scrollbar-width:none;
     }
 }
