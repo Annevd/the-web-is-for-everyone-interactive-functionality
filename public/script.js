@@ -55,4 +55,24 @@ document.addEventListener('keydown', function (event) {
         }
     }
 })
+
+const prevButton = document.querySelector(".pagination button:first-of-type")
+const nextButton = document.querySelector(".pagination button:nth-of-type(2)")
+const carrousel = document.querySelector(".lessons .stories ul")
+const storyWidth = document.querySelector(".story").offsetWidth;
+
+prevButton.addEventListener('click', function() {
+    carrousel.scrollBy({
+        left: -storyWidth,
+        behavior: 'smooth'
+    })
+})
+
+nextButton.addEventListener('click', function() {
+    carrousel.scrollBy({
+        left: storyWidth,
+        behavior: 'smooth'
+    })
+})
+
 })

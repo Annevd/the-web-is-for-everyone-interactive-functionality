@@ -219,15 +219,18 @@
     </section>
 
 <% if (justUpdated) { %>
-    <div class="succes-state">
-        <p>Playlist <%= justUpdated %> added to favorites!</p>
-        <div class="heart-animation"></div>
-    </div>
-<% } %>
+    <% if (whatHappened == "liked") { %>
+        <div class="succes-state">
+            <p>Playlist <%= justUpdated %> added to favorites!</p>
+            <div class="heart-animation"></div>
+        </div>
 
-<!-- <div class="deleted-state">
-    <p>Playlist removed from favorites.</p>
-</div> -->
+        <% } else { %>
+            <div class="deleted-state">
+                <p>Playlist <%= justUpdated %> removed from favorites.</p>
+            </div>
+        <% } %>
+<% } %>
 
 </main>
 

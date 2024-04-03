@@ -64,7 +64,8 @@ app.get('/lessons', function (request, response) {
       languages: languageData.data, // Pass fetched language data to the view under the 'languages' key
       playlists: playlistData.data, // Pass fetched playlist data to the view under the 'playlists' key
       audio: audioData.data, // Pass fetched audio data to the view under the 'audio' key
-      justUpdated: request.query.justUpdated})
+      justUpdated: request.query.justUpdated,
+      whatHappened: request.query.whatHappened})
     });
 })
 
