@@ -22,8 +22,7 @@ Ook heb ik gewerkt aan een playlist detailpagina waar je verhalen kan zien die i
 <!-- Voeg een mooie poster visual toe 📸 -->
 ### Visual
 
-<img height= 500 width= 250 src="https://github.com/Annevd/the-web-is-for-everyone-interactive-functionality/assets/144004647/c7ab304b-e322-4c5b-bda6-7fe2d32cb885">
-<img height= 500 width= 250 src="https://github.com/Annevd/the-web-is-for-everyone-interactive-functionality/assets/144004647/1955e98f-e746-4de1-a861-91b55330f23e">
+<img height= 500 width= 250 src="https://github.com/Annevd/the-web-is-for-everyone-interactive-functionality/assets/144004647/b5aa2903-80ff-4444-b36a-26928aeac831">
 <img height= 500 width= 250 src="https://github.com/Annevd/the-web-is-for-everyone-interactive-functionality/assets/144004647/5c88c91d-bd4f-430c-970f-9f457b6dd2ac">
 <img height= 500 width= 250 src="https://github.com/Annevd/server-side-rendering-server-side-website/assets/144004647/76f40cad-b114-4a64-9417-6e327e52504c">
 <img height= 500 width= 250 src="https://github.com/Annevd/the-web-is-for-everyone-interactive-functionality/assets/144004647/272ccc98-380d-4dc9-8606-0ff16918dd5f">
