@@ -66,9 +66,12 @@ Tot slot heb ik dit toegepast op de achtergrond kleuren in de gradients. Eerst s
 
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
-1. Fork deze repository
-2. Clone de repository op eigen apparaat
-3. Gebruik editor naar keuze
+1. Installeer [NodeJs](https://nodejs.org/en)
+2. Fork deze repository
+3. Open het in een code editor naar keuze
+4. Run de command ```npm install```
+5. Run de command `npm start`
+6. Klik op de localhost link en begin met coden!
 
 ## Bronnen
 
