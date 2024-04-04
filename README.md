@@ -54,7 +54,7 @@ Door gebruik te maken van progressive enhancement zorg je er dus voor dat de eer
 
 Bij deze leertaak heb ik dit principe ook toegepast.
 
-Sowieso ben ik bij alles eerst begonnen met het schrijven van de HTML, zoals bij de nieuwe toevoeging van deze sprint, de playlist detailpagina. Eerst heb ik ervoor gezorgd dat alle HTML en EJS correct gerenderd werd, en daarna ben ik pas begonnen met het toevoegen van CSS.
+Ik ben bij alles eerst begonnen met het schrijven van de HTML, zoals bij de nieuwe toevoeging van deze sprint, de playlist detailpagina. Eerst heb ik ervoor gezorgd dat alle HTML en EJS correct gerenderd werd, en daarna ben ik pas begonnen met het toevoegen van CSS.
 
 Ook heb ik het menu dat ik vorige sprint al heb gemaakt enhanced. Ik heb als enhancement toegevoegd dat je niet buiten het menu kan tabben als je in het menu bent, en dat je niet in het menu kan tabben als je er niét in zit.
 
