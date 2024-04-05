@@ -206,6 +206,10 @@ section {
     margin: 0 0.75rem 0 0.75rem;
 }
 
+.empty-state-text {
+    color: white;
+}
+
 /* Algemene styling story */
 
 .stories {
@@ -865,6 +869,7 @@ section {
     .stories-content {
         padding-bottom: var(--spacing);
     }
+
 }
 
 
